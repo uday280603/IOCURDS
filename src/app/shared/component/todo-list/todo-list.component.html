@@ -1,1 +1,12 @@
-<p>todo-list works!</p>
+<ul class="list-group" *ngIf="getTodos.length > 0; else noData">
+  <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of getTodos">
+    <strong>{{ todo.todoItem }}</strong>
+    <div >
+      <button mat-flat-button color="primary" class="mr-2">Edit</button>
+      <button mat-flat-button color="warn">Delete</button>
+    </div>
+  </li>
+</ul>
+<ng-template #noData>
+  <p class="alert alert-success">No Todo Data...!</p>
+</ng-template>

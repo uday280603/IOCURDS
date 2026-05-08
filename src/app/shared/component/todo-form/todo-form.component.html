@@ -1,1 +1,16 @@
-<p>todo-form works!</p>
+<div class="card">
+  <div class="card-body">
+    <div class="form-group">
+      <label for="todoItem">Todo Item</label>
+      <input type="text" #todoItem class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="isCompleted">isCompleted</label>
+      <select #isCompleted class="form-control">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+    </div>
+    <button class="btn btn-block btn-primary" (click)="onTodoAdd()">Add Todo</button>
+  </div>
+</div>
