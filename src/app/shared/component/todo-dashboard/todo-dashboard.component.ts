@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Itodo } from '../../const/todo';
+import { SnackBarService } from '../../services/snackBar.service';
 
 @Component({
   selector: 'app-todo-dashboard',
@@ -36,7 +37,7 @@ export class TodoDashboardComponent implements OnInit {
   }
 ];
 
-  constructor() { }
+  constructor(private _snackBar : SnackBarService) { }
 
   ngOnInit(): void {
   }
@@ -46,8 +47,9 @@ export class TodoDashboardComponent implements OnInit {
   }
   getRemoveId(todoId:string){
     let getIndex = this.todoArr.findIndex(t => t.todoId === todoId);
-    // console.log(getIndex);
-    this.todoArr.splice(getIndex,1)
+    
+    this.todoArr.splice(getIndex,1);
+    this._snackBar.openSnackBar(`Todo Item Removed Successfully..!`)
   }
 
 }

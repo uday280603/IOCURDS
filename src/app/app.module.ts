@@ -6,13 +6,19 @@ import { TodoFormComponent } from './shared/component/todo-form/todo-form.compon
 import { TodoListComponent } from './shared/component/todo-list/todo-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
+import { PostDashboardComponent } from './shared/component/post-dashboard/post-dashboard.component';
+import { PostFormComponent } from './shared/component/post-form/post-form.component';
+import { PostListComponent } from './shared/component/post-list/post-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoDashboardComponent,
     TodoFormComponent,
-    TodoListComponent
+    TodoListComponent,
+    PostDashboardComponent,
+    PostFormComponent,
+    PostListComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
   providers: [],

@@ -1,0 +1,20 @@
+<div *ngIf="getPostObj.length > 0; else noPostData">
+  <div class="card mb-3" *ngFor="let post of getPostObj ; trackBy : trackByFun">
+    <div class="card-header">{{ post.postTitle }}</div>
+    <div class="card-body">{{ post.content }}</div>
+    <div class="card-footer d-flex justify-content-between">
+      <button mat-flat-button color="primary" class="btn btn-sm">Edit</button>
+      <button
+        mat-flat-button
+        color="warn"
+        class="btn btn-sm"
+        (click)="onRemovePost(post.postId)"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
+<ng-template #noPostData>
+  <p class="alert alert-success">No Post Yet..!</p>
+</ng-template>
