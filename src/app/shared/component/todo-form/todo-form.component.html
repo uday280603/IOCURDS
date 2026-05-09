@@ -7,10 +7,17 @@
     <div class="form-group">
       <label for="isCompleted">isCompleted</label>
       <select #isCompleted class="form-control">
-        <option value="true">Yes</option>
-        <option value="false">No</option>
+        <option [value]="true">Yes</option>
+        <option [value]="false">No</option>
       </select>
     </div>
-    <button class="btn btn-block btn-primary" (click)="onTodoAdd()">Add Todo</button>
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="onTodoAdd()"
+      class="btn btn-block"
+    >
+      Add Todo
+    </button>
   </div>
 </div>

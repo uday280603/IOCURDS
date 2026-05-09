@@ -11,27 +11,27 @@ export class TodoDashboardComponent implements OnInit {
   todoArr : Itodo[] =[
   {
     todoId: '1',
-    todoItem: "Complete Spring Boot project setup",
-    isCompleted: false
+    todoItem: "HTML",
+    isCompleted: true
   },
   {
     todoId: '2',
-    todoItem: "Prepare interview questions for Java",
+    todoItem: "CSS",
     isCompleted: true
   },
   {
     todoId: '3',
-    todoItem: "Write unit tests for service layer",
-    isCompleted: false
+    todoItem: "JAVASCRIPT",
+    isCompleted: true
   },
   {
     todoId: '4',
-    todoItem: "Update LinkedIn profile",
+    todoItem: "BOOTSTRAP",
     isCompleted: true
   },
   {
     todoId: '5',
-    todoItem: "Practice REST API development",
+    todoItem: "TYPESCRIPT",
     isCompleted: false
   }
 ];
@@ -39,6 +39,15 @@ export class TodoDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onAddTodo(todo:Itodo){
+    this.todoArr.unshift(todo)
+  }
+  getRemoveId(todoId:string){
+    let getIndex = this.todoArr.findIndex(t => t.todoId === todoId);
+    // console.log(getIndex);
+    this.todoArr.splice(getIndex,1)
   }
 
 }
