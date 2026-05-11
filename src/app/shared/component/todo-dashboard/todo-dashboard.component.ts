@@ -9,6 +9,8 @@ import { SnackBarService } from '../../services/snackBar.service';
 })
 export class TodoDashboardComponent implements OnInit {
 
+  selectedTodo !: Itodo;
+
   todoArr : Itodo[] =[
   {
     todoId: '1',
@@ -24,22 +26,13 @@ export class TodoDashboardComponent implements OnInit {
     todoId: '3',
     todoItem: "JAVASCRIPT",
     isCompleted: true
-  },
-  {
-    todoId: '4',
-    todoItem: "BOOTSTRAP",
-    isCompleted: true
-  },
-  {
-    todoId: '5',
-    todoItem: "TYPESCRIPT",
-    isCompleted: false
   }
 ];
 
   constructor(private _snackBar : SnackBarService) { }
 
   ngOnInit(): void {
+
   }
 
   onAddTodo(todo:Itodo){
@@ -50,5 +43,14 @@ export class TodoDashboardComponent implements OnInit {
     this.todoArr.splice(getIndex,1);
     this._snackBar.openSnackBar(`Todo Item Removed Successfully..!`)
   }
+  getEditObj(todo:Itodo){
+    console.log(todo);
+
+    this.selectedTodo = todo;
+
+    
+
+  }
+
 
 }

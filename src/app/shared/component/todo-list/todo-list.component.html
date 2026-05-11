@@ -5,7 +5,7 @@
   >
     <strong>{{ todo.todoItem }}</strong>
     <div>
-      <button mat-mini-fab color="primary">
+      <button mat-mini-fab color="primary" (click)="onEdit(todo)">
         <mat-icon>edit</mat-icon>
       </button>
       <button mat-mini-fab color="warn" (click)="onRemoveTodo(todo.todoId)" class="ml-2">

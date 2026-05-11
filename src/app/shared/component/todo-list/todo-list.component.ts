@@ -11,6 +11,7 @@ import { GetConfirmComponent } from '../get-confirm/get-confirm.component';
 export class TodoListComponent implements OnInit {
   @Input() getTodos!: Array<Itodo>;
   @Output() emitRemoveId: EventEmitter<string> = new EventEmitter<string>();
+  @Output() emitEditObj: EventEmitter<Itodo> = new EventEmitter<Itodo>();
 
   constructor(private _matdialog: MatDialog) {}
 
@@ -26,5 +27,8 @@ export class TodoListComponent implements OnInit {
         this.emitRemoveId.emit(todoId);
       }
     });
+  }
+  onEdit(todo: Itodo) {
+    this.emitEditObj.emit(todo);
   }
 }

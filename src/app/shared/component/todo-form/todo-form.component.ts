@@ -16,6 +16,9 @@ import { SnackBarService } from '../../services/snackBar.service';
   styleUrls: ['./todo-form.component.scss'],
 })
 export class TodoFormComponent implements OnInit {
+
+
+   isInEditMode : boolean = false;
   @ViewChild('todoItem') todoItem!: ElementRef;
   @ViewChild('isCompleted') isCompleted!: ElementRef;
   @Output() emitNewTodo: EventEmitter<Itodo> = new EventEmitter<Itodo>();

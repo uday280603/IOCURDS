@@ -1,5 +1,6 @@
 <div class="card">
   <div class="card-body">
+    <h1>{{isInEditMode ? 'Update todo' :'Add Todo'}}</h1>
     <div class="form-group">
       <label for="todoItem">Todo Item</label>
       <input type="text" #todoItem class="form-control" />
@@ -13,11 +14,21 @@
     </div>
     <button
       mat-flat-button
+      *ngIf="!isInEditMode"
       color="primary"
       (click)="onTodoAdd()"
       class="btn btn-block"
     >
       Add Todo
+    </button>
+    <button
+     *ngIf="isInEditMode"
+      mat-flat-button
+      color="primary"
+      
+      class="btn btn-block"
+    >
+      Update Todo
     </button>
   </div>
 </div>
