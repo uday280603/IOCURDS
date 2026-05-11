@@ -1,11 +1,12 @@
 <div class="row">
     <div class="col-md-6">
          <app-todo-form 
-          
+          [getEditObj]="editTodoObj"
          (emitNewTodo)="onAddTodo($event)" 
+         (emitUpdatedTodo)="getUpdatedTodo($event)"
         ></app-todo-form></div>
     <div class="col-md-6"><app-todo-list 
-        (emitEditObj)="getEditObj($event)"
+        (emitEditTodo)="getEditTodo($event)"
         (emitRemoveId)="getRemoveId($event)"
          [getTodos]="todoArr"></app-todo-list>
     </div>
