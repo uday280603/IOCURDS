@@ -31,4 +31,8 @@ export class TodoListComponent implements OnInit {
   onEdit(todo: Itodo) {
     this.emitEditTodo.emit(todo);
   }
+
+  trackByFun(index : number , todo : Itodo){
+    return todo.todoId;
+  }
 }
