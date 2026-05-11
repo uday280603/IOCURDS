@@ -47,7 +47,6 @@ export class TodoDashboardComponent implements OnInit {
   }
   getRemoveId(todoId:string){
     let getIndex = this.todoArr.findIndex(t => t.todoId === todoId);
-    
     this.todoArr.splice(getIndex,1);
     this._snackBar.openSnackBar(`Todo Item Removed Successfully..!`)
   }

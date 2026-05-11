@@ -9,6 +9,9 @@ import { MaterialModule } from './shared/material/material.module';
 import { PostDashboardComponent } from './shared/component/post-dashboard/post-dashboard.component';
 import { PostFormComponent } from './shared/component/post-form/post-form.component';
 import { PostListComponent } from './shared/component/post-list/post-list.component';
+import { GetConfirmComponent } from './shared/component/get-confirm/get-confirm.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { PostListComponent } from './shared/component/post-list/post-list.compon
     TodoListComponent,
     PostDashboardComponent,
     PostFormComponent,
-    PostListComponent
+    PostListComponent,
+    GetConfirmComponent
+  
   ],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
   providers: [],
