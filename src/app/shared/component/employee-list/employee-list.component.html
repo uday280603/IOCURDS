@@ -1,0 +1,27 @@
+
+  <div class="card mb-3">
+  <div class="card-header">
+    {{ getEmployee.empName  }}
+
+    <small
+      class="badge"
+      [ngClass]="{
+        'badge-success': getEmployee.inService,
+        'badge-danger': !getEmployee.inService
+      }"
+    >
+      {{ getEmployee.inService ? 'Active' : 'Inactive' }}
+    </small>
+  </div>
+  <div class="card-body">
+    <strong>Address : {{ getEmployee.empAddress }}</strong>
+    <br />
+
+    <strong>Phone : {{ getEmployee.empPhone }} </strong>
+  </div>
+  <div class="card-footer d-flex justify-content-between">
+    <button class="btn-sm btn-primary" (click)="onEdit(getEmployee)">Edit</button>
+    <button class="btn-sm btn-danger" (click)="onRemove(getEmployee.empId)">Delete</button>
+  </div>
+</div>
+

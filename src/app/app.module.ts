@@ -10,6 +10,9 @@ import { PostDashboardComponent } from './shared/component/post-dashboard/post-d
 import { PostFormComponent } from './shared/component/post-form/post-form.component';
 import { PostListComponent } from './shared/component/post-list/post-list.component';
 import { GetConfirmComponent } from './shared/component/get-confirm/get-confirm.component';
+import { EmployeeDashboardComponent } from './shared/component/employee-dashboard/employee-dashboard.component';
+import { EmployeeListComponent } from './shared/component/employee-list/employee-list.component';
+import { EmployeeFormComponent } from './shared/component/employee-form/employee-form.component';
 
 
 
@@ -22,7 +25,10 @@ import { GetConfirmComponent } from './shared/component/get-confirm/get-confirm.
     PostDashboardComponent,
     PostFormComponent,
     PostListComponent,
-    GetConfirmComponent
+    GetConfirmComponent,
+    EmployeeDashboardComponent,
+    EmployeeListComponent,
+    EmployeeFormComponent
   
   ],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],

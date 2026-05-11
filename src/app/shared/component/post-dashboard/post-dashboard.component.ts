@@ -9,6 +9,8 @@ import { SnackBarService } from '../../services/snackBar.service';
 })
 export class PostDashboardComponent implements OnInit {
 
+  editPostObj !: Ipost;
+
   postArr : Ipost[] = [
   {
     postId: "1",
@@ -51,6 +53,21 @@ export class PostDashboardComponent implements OnInit {
     let getIndex = this.postArr.findIndex(p =>p.postId === id );
     this.postArr.splice(getIndex,1);
     this._snackBar.openSnackBar(`Post deleted succesfully....!`);
+  }
+
+  getEditObj(post : Ipost){
+
+    this.editPostObj = post;
+  }
+
+  getUpdatedObj(updatedObj : Ipost){
+    let getIndex = this.postArr.findIndex(p => p.postId === updatedObj.postId);
+    this.postArr[getIndex] = updatedObj;
+    this._snackBar.openSnackBar(` Post ${updatedObj.postTitle} is updated successfully..!`);
+    
+    
+    
+
   }
 
 }

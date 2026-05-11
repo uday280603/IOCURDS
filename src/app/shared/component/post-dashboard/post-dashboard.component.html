@@ -1,6 +1,10 @@
 <div class="row">
-    <div class="col-md-6"><app-post-form (emitNewPost)="onPostAdd($event)"></app-post-form></div>
+    <div class="col-md-6"><app-post-form
+        [getEditObj]="editPostObj"
+        (emitNewPost)="onPostAdd($event)"
+        (emitUpdatedObj)="getUpdatedObj($event)"></app-post-form></div>
     <div class="col-md-6"><app-post-list
         (emitRemoveId)="onRemoveId($event)"
-        [getPostObj]="postArr"></app-post-list></div>
+        [getPostObj]="postArr"
+        (emitEditObj)="getEditObj($event)"></app-post-list></div>
 </div>

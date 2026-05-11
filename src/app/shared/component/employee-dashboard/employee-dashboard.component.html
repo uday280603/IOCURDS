@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-4">
+    <app-employee-form
+      [getEditObj]="editEmployeeObj"
+      (emitNewEmployeeObj)="getNewemployeeObj($event)"
+      (emitUpdatedObj)="getUpdatedObj($event)"
+    ></app-employee-form>
+  </div>
+  <div class="col-md-4">
+    <div *ngIf="employeesArr.length > 0; else noData">
+      <div *ngFor="let employee of employeesArr ; trackBy : trackByFun">
+        <app-employee-list
+          [getEmployee]="employee"
+          (emitRemoveId)="getRemoveId($event)"
+          (emitEditObj)="getEditObj($event)"
+        ></app-employee-list>
+      </div>
+    </div>
+  </div>
+  <ng-template #noData>
+    <p class="alert alert-info">No Employee Found...!</p>
+  </ng-template>
+</div>

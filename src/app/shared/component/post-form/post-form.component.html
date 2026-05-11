@@ -1,5 +1,6 @@
 <div class="card">
     <div class="card-body">
+        <h3>{{isInEditMode ? 'Update Post' :'Add Post'}}</h3>
         <div class="form-group">
             <label for="postTitle">Post Title</label>
             <input type="text" #postTitle class="form-control">
@@ -8,6 +9,13 @@
             <label for="postBody">Post Title</label>
             <input type="text" #postBody class="form-control">
         </div>
-         <button mat-flat-button color="primary" class="btn btn-block" (click)="onPostAdd()">Add Post</button>
+         <button 
+         *ngIf="!isInEditMode"
+         mat-flat-button color="primary" class="btn btn-block" (click)="onPostAdd()">Add Post</button>
+         <button 
+         *ngIf="isInEditMode"
+         mat-flat-button color="warn" class="btn btn-block"
+         (click)="onUpdatePost()"
+         >Update Post</button>
     </div>
 </div>
