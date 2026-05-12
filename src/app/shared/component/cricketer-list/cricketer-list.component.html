@@ -1,27 +1,40 @@
-<div class="card">
-    <div class="card-header ">
-       <strong class="text-center"> {{getAllcricketers.name}}
-        <strong class="badge" [ngClass]="{
-            'badge-success' : getAllcricketers.isPlaying,
-            'badge-danger' : !getAllcricketers.isPlaying
-        }">{{getAllcricketers.isPlaying  ? 'Active' : 'Retired'}}</strong>
-       </strong>
+<div class="card h-100">
+  <div class="card-header">
+    <strong class="text-center">
+      {{ getAllcricketers.name }}
+      <strong
+        class="badge"
+        [ngClass]="{
+          'badge-success': getAllcricketers.isPlaying,
+          'badge-danger': !getAllcricketers.isPlaying
+        }"
+        >{{ getAllcricketers.isPlaying ? "Active" : "Retired" }}</strong
+      >
+    </strong>
+  </div>
+  <div class="card-body">
+    <div class="img-container" *ngIf="getAllcricketers.image; else noImg">
+      <img [src]="getAllcricketers.image" [alt]="getAllcricketers.name" />
     </div>
-    <div class="card-body">
-        <div class="img-container">
-            <img [src]="getAllcricketers.image"
-             [alt]="getAllcricketers.name">
-
-        </div>
-        <strong>Runs : {{getAllcricketers.runs}}</strong><br>
-        <strong>Wicket : {{getAllcricketers.wickets}}</strong><br>
-        <strong>Jersy No : {{getAllcricketers.jersy}}</strong><br>
-        
-
-
-    </div>
-    <div class="card-footer d-flex justify-content-between">
-        <button class="btn btn-sm btn-primary" (click)="onEdit(getAllcricketers)">Edit</button>
-         <button class="btn btn-sm btn-danger" (click)="onRemove(getAllcricketers.id)">Delete</button>
-    </div>
+    <ng-template #noImg>
+      <p class="noImage">No Image</p>
+    </ng-template>
+    <strong>Runs : {{ getAllcricketers.runs }}</strong
+    ><br />
+    <strong>Wicket : {{ getAllcricketers.wickets }}</strong
+    ><br />
+    <strong>Jersy No : {{ getAllcricketers.jersy }}</strong
+    ><br />
+  </div>
+  <div class="card-footer d-flex justify-content-between">
+    <button class="btn btn-sm btn-primary" (click)="onEdit(getAllcricketers)">
+      Edit
+    </button>
+    <button
+      class="btn btn-sm btn-danger"
+      (click)="onRemove(getAllcricketers.id)"
+    >
+      Delete
+    </button>
+  </div>
 </div>

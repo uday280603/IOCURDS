@@ -55,7 +55,7 @@ export class CricketerDashboardComponent implements OnInit {
   getRemoveId(removeId : number){
     let getIndex = this.cricketerArr.findIndex(c=> c.id === removeId);
     this.cricketerArr.splice(getIndex,1)
-    this._snackBar.openSnackBar(`Cricketer  with ${removeId} is Removed Successfully...!`)
+    this._snackBar.openSnackBar(`Cricketer  with ${removeId}  id is Removed Successfully...!`)
 
   }
   getEditObj(editObj : Icricketers){
