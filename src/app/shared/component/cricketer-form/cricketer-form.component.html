@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-body">
+        <h3>{{isInEditMode ? 'Update Form' : 'Add Form'}}</h3>
+        <div class="form-group">
+            <label for="jersyNo">Jersy no</label>
+            <input type="text" #jersyNo class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="name">Cricketer Name</label>
+            <input type="text" #name class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="run">Runs</label>
+            <input type="text" #run class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="wicket">Wicket</label>
+            <input type="text" #wicket class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="imgUrl">Iamge URL</label>
+            <input type="text" #imgUrl class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="isActive"> Is Active</label>
+            <select type="text" #isActive class="form-control">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+        <button *ngIf="!isInEditMode" class="btn btn-block btn-primary" (click)="onAddcricketer()">Add Cricketer</button>
+        <button *ngIf="isInEditMode" class="btn btn-block btn-warning" (click)="onUpdateCricketers()">Update Cricketer</button>
+    </div>
+</div>

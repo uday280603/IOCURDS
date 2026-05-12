@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-4 mb-4">
+    <app-cricketer-form
+      (emitNewObj)="getNewCricketreObj($event)"
+      [editObjForPatch]="editObjForPatch"
+      (emitUpdatedObj)="getUpdatedObj($event)"
+    ></app-cricketer-form>
+  </div>
+</div>
+
+<div class="row" *ngIf="cricketerArr.length > 0; else noData">
+  <div class="col-md-4 mb-4" *ngFor="let cricketer of cricketerArr">
+    <app-cricketer-list
+      [getAllcricketers]="cricketer"
+      (emitRemoveId)="getRemoveId($event)"
+      (emitEditObj)="getEditObj($event)"
+    >
+    </app-cricketer-list>
+  </div>
+</div>
+<ng-template #noData>
+  <p class="alert alert-danger text-center">no Data Yet..!</p>
+</ng-template>

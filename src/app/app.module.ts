@@ -19,6 +19,10 @@ import { StudentFormComponent } from './shared/component/student-form/student-fo
 import { ProductDashboardComponent } from './shared/component/product-dashboard/product-dashboard.component';
 import { ProductFormComponent } from './shared/component/product-form/product-form.component';
 import { ProductListComponent } from './shared/component/product-list/product-list.component';
+import { CricketerDashboardComponent } from './shared/component/cricketer-dashboard/cricketer-dashboard.component';
+import { CricketerFormComponent } from './shared/component/cricketer-form/cricketer-form.component';
+import { CricketerListComponent } from './shared/component/cricketer-list/cricketer-list.component';
+import { MatDialogBoxComponent } from './shared/component/mat-dialog-box/mat-dialog-box.component';
 
 
 
@@ -40,7 +44,11 @@ import { ProductListComponent } from './shared/component/product-list/product-li
     StudentFormComponent,
     ProductDashboardComponent,
     ProductFormComponent,
-    ProductListComponent
+    ProductListComponent,
+    CricketerDashboardComponent,
+    CricketerFormComponent,
+    CricketerListComponent,
+    MatDialogBoxComponent
   
   ],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
