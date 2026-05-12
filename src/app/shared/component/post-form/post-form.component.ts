@@ -18,7 +18,6 @@ import { UuidService } from '../../services/uuid.service';
   styleUrls: ['./post-form.component.scss'],
 })
 export class PostFormComponent implements OnInit, OnChanges {
-  
   @Input() getEditObj!: Ipost;
 
   isInEditMode: boolean = false;
@@ -40,15 +39,18 @@ export class PostFormComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {}
   onPostAdd() {
-    let newPostObj: Ipost = {
-      postId: this._uuid.generateUUID(),
-      postTitle: this.postTitle.nativeElement.value,
-      content: this.postBody.nativeElement.value,
-    };
-    // console.log(newPostObj);
-    this.postTitle.nativeElement.value = '';
-    this.postBody.nativeElement.value = '';
-    this.emitNewPost.emit(newPostObj);
+    let val1: string = this.postTitle.nativeElement.value;
+    if (val1.length > 0) {
+      let newPostObj: Ipost = {
+        postId: this._uuid.generateUUID(),
+        postTitle: this.postTitle.nativeElement.value,
+        content: this.postBody.nativeElement.value,
+      };
+      // console.log(newPostObj);
+      this.postTitle.nativeElement.value = '';
+      this.postBody.nativeElement.value = '';
+      this.emitNewPost.emit(newPostObj);
+    }
   }
 
   onUpdatePost() {
@@ -58,9 +60,8 @@ export class PostFormComponent implements OnInit, OnChanges {
       content: this.postBody.nativeElement.value,
     };
     this.emitUpdatedObj.emit(UPDATED_OBJ);
-       this.postTitle.nativeElement.value = '';
+    this.postTitle.nativeElement.value = '';
     this.postBody.nativeElement.value = '';
-    this.isInEditMode = false
-
+    this.isInEditMode = false;
   }
 }

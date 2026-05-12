@@ -47,19 +47,22 @@ export class TodoFormComponent implements OnInit, OnChanges {
     // console.log(this.getTodoObj);
   }
   onTodoAdd() {
-    let newTodoObj: Itodo = {
-      todoId: this._uuidServive.generateUUID(),
-      todoItem: this.todoItem.nativeElement.value,
-      isCompleted:
-        this.isCompleted.nativeElement.value === 'true' ? true : false,
-    };
-    console.log(newTodoObj);
-    this.todoItem.nativeElement.value = '';
-    this.isCompleted.nativeElement.value = true;
-    this.emitNewTodo.emit(newTodoObj);
-    this._snackBar.openSnackBar(
-      `New todo Item ${newTodoObj.todoItem} is Added Successfully...!!!`,
-    );
+    let val1: string = this.todoItem.nativeElement.value;
+    if (val1.length > 0) {
+      let newTodoObj: Itodo = {
+        todoId: this._uuidServive.generateUUID(),
+        todoItem: this.todoItem.nativeElement.value,
+        isCompleted:
+          this.isCompleted.nativeElement.value === 'true' ? true : false,
+      };
+      console.log(newTodoObj);
+      this.todoItem.nativeElement.value = '';
+      this.isCompleted.nativeElement.value = true;
+      this.emitNewTodo.emit(newTodoObj);
+      this._snackBar.openSnackBar(
+        `New todo Item ${newTodoObj.todoItem} is Added Successfully...!!!`,
+      );
+    }
   }
 
   onTodoUpdate() {

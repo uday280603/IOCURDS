@@ -47,22 +47,25 @@ export class StudentFormComponent implements OnInit, OnChanges {
   ngOnInit(): void {}
 
   onStudentAdd() {
-    let NEW_STUDENT_OBJ: Istudent = {
-      id: Date.now(),
-      name: this.fname.nativeElement.value,
-      lastname: this.lname.nativeElement.value,
-      email: this.email.nativeElement.value,
-      contact: this.contact.nativeElement.value,
-      isActive: this.isActive.nativeElement.value === 'true' ? true : false,
-    };
+    let val1: string = this.fname.nativeElement.value;
+    if (val1.length > 0) {
+      let NEW_STUDENT_OBJ: Istudent = {
+        id: Date.now(),
+        name: this.fname.nativeElement.value,
+        lastname: this.lname.nativeElement.value,
+        email: this.email.nativeElement.value,
+        contact: this.contact.nativeElement.value,
+        isActive: this.isActive.nativeElement.value === 'true' ? true : false,
+      };
 
-    // console.log(NEW_STUDENT_OBJ);
-    this.fname.nativeElement.value = '';
-    this.lname.nativeElement.value = '';
-    this.email.nativeElement.value = '';
-    this.contact.nativeElement.value = '';
-    this.isActive.nativeElement.value = true;
-    this.emitNewStudentObj.emit(NEW_STUDENT_OBJ);
+      // console.log(NEW_STUDENT_OBJ);
+      this.fname.nativeElement.value = '';
+      this.lname.nativeElement.value = '';
+      this.email.nativeElement.value = '';
+      this.contact.nativeElement.value = '';
+      this.isActive.nativeElement.value = true;
+      this.emitNewStudentObj.emit(NEW_STUDENT_OBJ);
+    }
   }
 
   onStudentUpdate() {
