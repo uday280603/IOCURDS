@@ -1,0 +1,58 @@
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sr no</th>
+        <th>Name</th>
+        <th>Catregory</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Brand</th>
+        <th>Is Avaible</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="
+          let product of getAllProduct;
+          let i = index;
+          trackBy: trackByFun
+        "
+      >
+        <td>{{ i + 1 }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.brand }}</td>
+        <td>
+          <span
+            class="badge"
+            [ngClass]="{
+              'badge-success': product.isAvailable,
+              'badge-danger': !product.isAvailable
+            }"
+          >
+            {{ product.isAvailable ? "Yes" : "No" }}</span
+          >
+        </td>
+        <td>
+          <button
+            class="btn btn-sm btn-primary"
+            (click)="onEditProduct(product)"
+          >
+            Edit
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="onRemove(product.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

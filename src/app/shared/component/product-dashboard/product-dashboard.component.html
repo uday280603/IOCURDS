@@ -1,0 +1,40 @@
+<!-- <div class="row">
+  <div class="col-md-4">
+    <app-product-form
+      (emitNewProductObj)="getNewproductObj($event)"
+      [getEditObj]="editObj"
+      (emitUpdatedObj)="getUpdatedObj($event)"
+    ></app-product-form>
+  </div>
+  <div class="col-md-8" *ngIf="productArr.length > 0; else noProductData">
+    <app-product-list
+      (emitEditObj)="getEditObj($event)"
+      [getAllProduct]="productArr"
+      (emitRemoveid)="getRemoveId($event)"
+    ></app-product-list>
+     <ng-template #noProductData>
+    <p class="alert alert-warning">No Product Data</p>
+  </ng-template>
+  </div>
+ 
+</div> -->
+<div class="row">
+  <div class="col-md-4">
+    <app-product-form
+      (emitNewProductObj)="getNewproductObj($event)"
+      [getEditObj]="editObj"
+      (emitUpdatedObj)="getUpdatedObj($event)"
+    ></app-product-form>
+  </div>
+
+  <div class="col-md-8" *ngIf="productArr.length > 0; else noProductData">
+    <app-product-list
+      (emitEditObj)="getEditObj($event)"
+      [getAllProduct]="productArr"
+      (emitRemoveid)="getRemoveId($event)"
+    ></app-product-list>
+  </div>
+</div>
+<ng-template #noProductData>
+  <p class="alert alert-warning">No Product Data</p>
+</ng-template>

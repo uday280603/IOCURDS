@@ -16,6 +16,9 @@ import { EmployeeFormComponent } from './shared/component/employee-form/employee
 import { StudentDashboardComponent } from './shared/component/student-dashboard/student-dashboard.component';
 import { StudentTableComponent } from './shared/component/student-table/student-table.component';
 import { StudentFormComponent } from './shared/component/student-form/student-form.component';
+import { ProductDashboardComponent } from './shared/component/product-dashboard/product-dashboard.component';
+import { ProductFormComponent } from './shared/component/product-form/product-form.component';
+import { ProductListComponent } from './shared/component/product-list/product-list.component';
 
 
 
@@ -34,7 +37,10 @@ import { StudentFormComponent } from './shared/component/student-form/student-fo
     EmployeeFormComponent,
     StudentDashboardComponent,
     StudentTableComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    ProductDashboardComponent,
+    ProductFormComponent,
+    ProductListComponent
   
   ],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
