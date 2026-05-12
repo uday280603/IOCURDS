@@ -1,0 +1,23 @@
+<div class="row">
+
+    <div class="col-md-4">
+      <app-student-form
+      (emitNewStudentObj)="getNewStudent($event)"
+      [getEditObj]="editStudentObj"
+      (emitUpdatedObj)="getUpdatedObj($event)"
+      ></app-student-form>
+    </div>
+    <div class="col-md-8">
+        <div *ngIf="studentArr.length >0 ; else noStudentData">
+          <app-student-table
+          (emitRemoveId)="getRemoveId($event)"
+          (emitEditStudentObj)="getEditStudentObj($event)"
+        [getStudetnts]="studentArr"
+        ></app-student-table>
+        </div>
+    </div>
+    <ng-template #noStudentData>
+      <p class="alert alert-info text-center">No Student Yet...!</p>
+    </ng-template>
+  </div>
+

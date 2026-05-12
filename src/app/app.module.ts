@@ -13,6 +13,9 @@ import { GetConfirmComponent } from './shared/component/get-confirm/get-confirm.
 import { EmployeeDashboardComponent } from './shared/component/employee-dashboard/employee-dashboard.component';
 import { EmployeeListComponent } from './shared/component/employee-list/employee-list.component';
 import { EmployeeFormComponent } from './shared/component/employee-form/employee-form.component';
+import { StudentDashboardComponent } from './shared/component/student-dashboard/student-dashboard.component';
+import { StudentTableComponent } from './shared/component/student-table/student-table.component';
+import { StudentFormComponent } from './shared/component/student-form/student-form.component';
 
 
 
@@ -28,7 +31,10 @@ import { EmployeeFormComponent } from './shared/component/employee-form/employee
     GetConfirmComponent,
     EmployeeDashboardComponent,
     EmployeeListComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    StudentDashboardComponent,
+    StudentTableComponent,
+    StudentFormComponent
   
   ],
   imports: [BrowserModule, BrowserAnimationsModule, MaterialModule],
